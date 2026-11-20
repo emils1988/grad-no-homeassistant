@@ -1,0 +1,111 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Find a stop",
+        "description": "Choose the data source and enter part of the stop name.",
+        "data": {
+          "provider": "Data source",
+          "query": "Stop"
+        },
+        "data_description": {
+          "query": "For example “Villach Hbf”, “Spittal/Drau” or “Praterstern”."
+        }
+      },
+      "stop": {
+        "title": "Stop and filters",
+        "description": "All filters are optional and can be changed later under “Configure”.",
+        "data": {
+          "stop": "Stop",
+          "name": "Display name",
+          "products": "Means of transport",
+          "lines": "Lines",
+          "direction": "Direction",
+          "walk_min": "Walking time",
+          "ahead_min": "Look-ahead"
+        },
+        "data_description": {
+          "name": "Leave empty to use the name of the stop.",
+          "products": "Show only trains or only bus/tram/metro.",
+          "lines": "Comma-separated, e.g. “S1, REX 7, 5110”. Empty = all lines.",
+          "direction": "Comma-separated, part of the destination, e.g. “Villach, Spittal”. Empty = all directions.",
+          "walk_min": "Departures you can no longer reach on foot are hidden.",
+          "ahead_min": "Only show departures within the next x minutes (up to 24 h)."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The timetable service is not reachable right now.",
+      "no_results": "No stop found. Try a different search term."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Filters and polling",
+        "data": {
+          "products": "Means of transport",
+          "lines": "Lines",
+          "direction": "Direction",
+          "walk_min": "Walking time",
+          "ahead_min": "Look-ahead",
+          "scan_interval": "Polling interval"
+        },
+        "data_description": {
+          "products": "Show only trains or only bus/tram/metro.",
+          "lines": "Comma-separated, e.g. “S1, REX 7, 5110”. Empty = all lines.",
+          "direction": "Comma-separated, part of the destination, e.g. “Villach, Spittal”. Empty = all directions.",
+          "walk_min": "Departures you can no longer reach on foot are hidden.",
+          "ahead_min": "Only show departures within the next x minutes (up to 24 h).",
+          "scan_interval": "How often departures are fetched (at least 30 seconds to spare the servers)."
+        }
+      }
+    }
+  },
+  "selector": {
+    "provider": {
+      "options": {
+        "scotty": "ÖBB Scotty (all of Austria: rail, Postbus, city transport)",
+        "wiener_linien": "Wiener Linien (real time for Vienna)"
+      }
+    },
+    "products": {
+      "options": {
+        "all": "All",
+        "train": "Trains only",
+        "bus": "Bus, tram and metro only"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "next_departure": {
+        "name": "Next departure"
+      }
+    }
+  },
+  "services": {
+    "get_formation": {
+      "name": "Get coach formation",
+      "description": "Fetches the coach formation of an ÖBB long-distance train from ÖBB Live.",
+      "fields": {
+        "train_number": {
+          "name": "Train number",
+          "description": "For example 66 for RJX 66."
+        },
+        "station": {
+          "name": "Station",
+          "description": "Name of the station the train departs from."
+        },
+        "date": {
+          "name": "Date",
+          "description": "Departure date, empty = today."
+        },
+        "eva": {
+          "name": "EVA",
+          "description": "Optional: EVA number(s) of the station, comma-separated. Empty = look up by name."
+        }
+      }
+    }
+  }
+}

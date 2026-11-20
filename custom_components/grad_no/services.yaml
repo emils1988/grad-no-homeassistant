@@ -1,0 +1,21 @@
+get_formation:
+  fields:
+    train_number:
+      required: true
+      example: 66
+      selector:
+        number:
+          min: 1
+          max: 99999
+          mode: box
+    station:
+      example: "Wien Hbf"
+      selector:
+        text:
+    date:
+      selector:
+        date:
+    eva:
+      example: "8103000"
+      selector:
+        text:

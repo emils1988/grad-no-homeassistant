@@ -1,0 +1,111 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Haltestelle suchen",
+        "description": "Wähle die Datenquelle und gib einen Teil des Haltestellennamens ein.",
+        "data": {
+          "provider": "Datenquelle",
+          "query": "Haltestelle"
+        },
+        "data_description": {
+          "query": "Zum Beispiel „Villach Hbf“, „Spittal/Drau“ oder „Praterstern“."
+        }
+      },
+      "stop": {
+        "title": "Haltestelle und Filter",
+        "description": "Alle Filter sind optional und lassen sich später unter „Konfigurieren“ ändern.",
+        "data": {
+          "stop": "Haltestelle",
+          "name": "Anzeigename",
+          "products": "Verkehrsmittel",
+          "lines": "Linien",
+          "direction": "Richtung",
+          "walk_min": "Gehzeit",
+          "ahead_min": "Vorschau"
+        },
+        "data_description": {
+          "name": "Leer lassen, um den Namen der Haltestelle zu verwenden.",
+          "products": "Nur Züge oder nur Bus/Straßenbahn/U-Bahn anzeigen.",
+          "lines": "Komma-getrennt, z. B. „S1, REX 7, 5110“. Leer = alle Linien.",
+          "direction": "Komma-getrennt, Teil des Ziels, z. B. „Villach, Spittal“. Leer = alle Richtungen.",
+          "walk_min": "Abfahrten, die du zu Fuß nicht mehr erreichst, werden ausgeblendet.",
+          "ahead_min": "Nur Abfahrten in den nächsten x Minuten zeigen (bis 24 h)."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Die Fahrplanauskunft ist gerade nicht erreichbar.",
+      "no_results": "Keine Haltestelle gefunden. Versuch einen anderen Suchbegriff."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Filter und Abfrage",
+        "data": {
+          "products": "Verkehrsmittel",
+          "lines": "Linien",
+          "direction": "Richtung",
+          "walk_min": "Gehzeit",
+          "ahead_min": "Vorschau",
+          "scan_interval": "Abfrageintervall"
+        },
+        "data_description": {
+          "products": "Nur Züge oder nur Bus/Straßenbahn/U-Bahn anzeigen.",
+          "lines": "Komma-getrennt, z. B. „S1, REX 7, 5110“. Leer = alle Linien.",
+          "direction": "Komma-getrennt, Teil des Ziels, z. B. „Villach, Spittal“. Leer = alle Richtungen.",
+          "walk_min": "Abfahrten, die du zu Fuß nicht mehr erreichst, werden ausgeblendet.",
+          "ahead_min": "Nur Abfahrten in den nächsten x Minuten zeigen (bis 24 h).",
+          "scan_interval": "Wie oft die Abfahrten geholt werden (mindestens 30 Sekunden, schont die Server)."
+        }
+      }
+    }
+  },
+  "selector": {
+    "provider": {
+      "options": {
+        "scotty": "ÖBB Scotty (ganz Österreich: Bahn, Postbus, Stadtverkehr)",
+        "wiener_linien": "Wiener Linien (Echtzeit für Wien)"
+      }
+    },
+    "products": {
+      "options": {
+        "all": "Alle",
+        "train": "Nur Züge",
+        "bus": "Nur Bus, Straßenbahn und U-Bahn"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "next_departure": {
+        "name": "Nächste Abfahrt"
+      }
+    }
+  },
+  "services": {
+    "get_formation": {
+      "name": "Wagenreihung abrufen",
+      "description": "Holt die Wagenreihung eines ÖBB-Fernverkehrszugs von ÖBB Live.",
+      "fields": {
+        "train_number": {
+          "name": "Zugnummer",
+          "description": "Zum Beispiel 66 für RJX 66."
+        },
+        "station": {
+          "name": "Bahnhof",
+          "description": "Name des Bahnhofs, an dem der Zug abfährt."
+        },
+        "date": {
+          "name": "Datum",
+          "description": "Abfahrtsdatum, leer = heute."
+        },
+        "eva": {
+          "name": "EVA",
+          "description": "Optional: EVA-Nummer(n) des Bahnhofs, Komma-getrennt. Leer = über den Namen suchen."
+        }
+      }
+    }
+  }
+}

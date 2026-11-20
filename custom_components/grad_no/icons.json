@@ -1,0 +1,14 @@
+{
+  "entity": {
+    "sensor": {
+      "next_departure": {
+        "default": "mdi:bus-clock"
+      }
+    }
+  },
+  "services": {
+    "get_formation": {
+      "service": "mdi:train-car"
+    }
+  }
+}
