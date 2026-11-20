@@ -134,8 +134,10 @@ response_variable: wagenreihung
 
 - **ÖBB Scotty** und **ÖBB Live** sind die Schnittstellen der ÖBB-Fahrplanauskunft bzw. von live.oebb.at. Sie sind
   nicht offiziell dokumentiert, laufen aber seit Jahren stabil. Bitte das Abfrageintervall nicht unnötig kurz stellen.
-- **Wiener Linien:** Datenquelle Stadt Wien – [data.wien.gv.at](https://data.wien.gv.at), Lizenz CC BY 4.0.
-- Dieses Projekt steht in keiner Verbindung zu ÖBB oder Wiener Linien.
+- **Wiener Linien:** Datenquelle: Stadt Wien – [data.wien.gv.at](https://data.wien.gv.at), Lizenz [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de).
+  Der Hinweis steht auch im Sensor (Attribut `attribution`) und unten in der Karte.
+- Dieses Projekt steht in keiner Verbindung zu ÖBB oder Wiener Linien. „ÖBB“ und „Wiener Linien“ sind Marken der jeweiligen Unternehmen
+  und werden hier nur genannt, um die Datenquelle zu beschreiben.
 
 ## Hardware
 
@@ -156,4 +158,4 @@ the board in ÖBB, Wiener Linien or amber style; tap a long-distance train to se
 
 ## Lizenz
 
-MIT
+[MIT](LICENSE) © 2026 emils1988. Für die Daten gelten die Bedingungen der jeweiligen Quelle (siehe oben).
